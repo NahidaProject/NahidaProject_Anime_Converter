@@ -6,9 +6,9 @@ $aid = Read-Host "¶¯Âþa_id(±àºÅ)"
 
 for ($x = 1; $x -lt $aset + 1; $x = $x + 1) {
     if ($x -lt 10) {
-        ffmpeg -i $x"."$vformat -acodec aac -vcodec libx264 -pix_fmt yuv420p -vf subtitles=$x"."$sformat $aid"_00"$x"."$vformat2
+        ffmpeg -i $x"."$vformat -acodec aac -vcodec h264_nvenc -pix_fmt yuv420p -vf subtitles=$x"."$sformat $aid"_00"$x"."$vformat2
     }
     else {
-        ffmpeg -i $x"."$vformat -acodec aac -vcodec libx264 -pix_fmt yuv420p -vf subtitles=$x"."$sformat $aid"_0"$x.$vformat2
+        ffmpeg -i $x"."$vformat -acodec aac -vcodec h264_nvenc -pix_fmt yuv420p -vf subtitles=$x"."$sformat $aid"_0"$x.$vformat2
     } 
 }
